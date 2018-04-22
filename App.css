@@ -1,15 +1,107 @@
+
+@font-face {
+  font-family: 'Underworld Odd';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Underworld Odd'), url('Underodd.woff') format('woff');
+  }
+
 .App {
   text-align: center;
 }
 
+.App-header {
+  position: relative;
+  border: 2rem ridge lightblue;
+  border-radius: 4rem;
+   height: 150px;
+   padding: 20px;
+   color: red;
+   padding-bottom: 8rem;
+    }
+
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+position: relative;
+  animation: App-logo-spin infinite 10s linear;
   height: 80px;
+  transform: translateY(-50%);
+
+    }
+
+      
+     .App-title {
+       position: relative;
+       box-shadow: 2rem;
+       letter-spacing: 1rem;
+       transform: translateY(-50%);
+       font-size: 2em;
+       color: red;
+       font-family:  'underworld odd'
+     }
+     
+
+
+hr{
+  position: relative;
+   color: red;
+}
+body{
+  background-image: url('http://4pgames.net/wp-content/uploads/2015/11/battlefront-1080p.jpg');
+  background-size: cover;
+background-repeat: repeat-y;
+   
+}
+
+
+.name{
+  font-family: "Underworld Odd";
+  color:blue;
+  letter-spacing: 5px;
+    padding-left: 30%;
+  
+}
+
+.pic{
+  
+  position: relative;
+  width: 250px;
+  height: 250px;
+ 
+ 
+}
+
+.Luke{
+  width: 250px;
+  height: 250px;
+}
+
+.charcards{
+  transform: translateY(20%);
+  width: 22rem;
+  position: relative;
+  background: #2196f3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left top, #f44336, #2196f3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right bottom, #f44336, #2196f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: inline-block;
+padding: 50px;
+margin: 2rem;
+border-width: 2rem;
+box-shadow: 5rem;
+transition: 1.5s;
+margin-left: 15%;
+}
+
+.charcards:hover{
+  transform: rotateY(180deg);
 }
 
 
 
-.App-title {
- background-color: lightblue;
-  font-size: 1.5em;
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
