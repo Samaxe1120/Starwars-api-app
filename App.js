@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react'
+import './App.css'
+import lightsaber from './lightsaber.svg'
 
-import './App.css';
+const App = () => {
+  return(
+    <div className="App">
+    <header className="App-header">
+          <img src={lightsaber} className="App-logo" alt="logo"/>
+          <h1 className="App-title">
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-              <h1 className="App-title">Star Wars app</h1>
-               <p className="App-intro">
-                 </p>
-      </div>
-    );
-  }
+            Star Wars Character App</h1>
+    </header>  
+    </div>
+  )
 }
 
 export default App;
