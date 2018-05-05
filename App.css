@@ -20,6 +20,14 @@
    padding-bottom: 8rem;
     }
 
+    .searchbox2{
+      position: absolute;
+      background-color: lightskyblue;
+      text-align: center;
+       transform: translateX(-50%) translateY(100%);
+    padding: 1rem;
+    }
+
 .App-logo {
 position: relative;
   animation: App-logo-spin infinite 10s linear;
@@ -45,15 +53,19 @@ hr{
   position: relative;
    color: red;
 }
+
+html{
+  zoom: 100%;
+}
 body{
   background-image: url('http://4pgames.net/wp-content/uploads/2015/11/battlefront-1080p.jpg');
   background-size: cover;
 background-repeat: repeat-y;
-   
-}
+
+   }
 
 
-.name{
+.name1{
   font-family: "Underworld Odd";
   color:blue;
   letter-spacing: 5px;
@@ -76,23 +88,24 @@ background-repeat: repeat-y;
 }
 
 .charcards{
-  transform: translateY(20%);
+  transform: translateX(40%) translateY(30%);
   width: 22rem;
   position: relative;
   background: #2196f3;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left top, #f44336, #2196f3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right bottom, #f44336, #2196f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  display: inline-block;
-padding: 50px;
-margin: 2rem;
+  float: left;
+  padding: 60px;
+ margin: 5rem;
 border-width: 2rem;
 box-shadow: 5rem;
 transition: 1.5s;
 margin-left: 15%;
 }
 
-.charcards:hover{
-  transform: rotateY(180deg);
+.charcards:hover::after{
+    content:"character";
+  
 }
 
 
