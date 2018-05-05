@@ -17,3 +17,5 @@ const Card = (characters) => {
       );
     }
 
+export default Card;
+
