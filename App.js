@@ -3,16 +3,27 @@ import './App.css'
 import SearchBox from './SearchBox';
 import lightsaber from './lightsaber.svg'
 import {characters} from './characters.js'
-import {Card, Card2, Card3, Card4, Card5, Card6, cardComponent} from './Card';
+import {Card} from './Card.js'
+import CardList from './CardList.js'
+
 
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-  characters: characters,
+  characters: [],
    searchfield: ''
 }
+    }
+
+    componentDidMount(){
+      // fetch('https://swapi.co/api/people/1/')
+      // .then(response =>{
+      //   repsonse.json(); 
+      // })
+      // .then()
+      this.setState({characters:characters});
     }
 
         onSearchChange = (event) => {
@@ -32,8 +43,11 @@ class App extends Component {
               Star Wars Character App</h1>
       </header>  
       <SearchBox searchChange= {this.onSearchChange} />
-      <cardComponent characters = {filteredCharacters}/>
-      
+      <CardList characters = {filteredCharacters}/>
       </div>
     ); 
   }
+
+}
+
+export default App;
