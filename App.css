@@ -40,8 +40,7 @@ position: relative;
      .App-title {
        position: relative;
        box-shadow: 2rem;
-       letter-spacing: 1rem;
-       transform: translateY(-50%);
+       letter-spacing: 2rem;
        font-size: 2em;
        color: red;
        font-family:  'underworld odd'
@@ -52,15 +51,24 @@ position: relative;
 hr{
   position: relative;
    color: red;
+   
 }
 
+hr::after{
+  position: absolute;
+white-space: nowrap;
+  font-size: 2em;
+  transform: translateX(-3.3em) translateY(-1.5em);
+  content:'Hover for stats';
+  color: lightcyan;
+}
 html{
   zoom: 100%;
 }
 body{
   background-image: url('http://4pgames.net/wp-content/uploads/2015/11/battlefront-1080p.jpg');
   background-size: cover;
-background-repeat: repeat-y;
+
 
    }
 
@@ -68,46 +76,79 @@ background-repeat: repeat-y;
 .name1{
   font-family: "Underworld Odd";
   color:blue;
+  opacity: 0.5;
   letter-spacing: 5px;
-    padding-left: 30%;
-  
+    padding-left: 20%;
+
 }
 
+.name2{
+  letter-spacing: 5px;
+  padding-left: 20%;
+  color: red;
+  opacity: .5;
+}
+.data{
+  top: 10%;
+  padding-left: 20%;
+  color: lightblue;
+}
+
+.data1{
+  color: lightcoral;
+  top: 10%;
+  padding-left: 20%;
+}
 .pic{
-  
+  transform: translateY(-20%);
   position: relative;
-  width: 250px;
-  height: 250px;
- 
- 
+  width: 100%;
+  height: 300px;
+  
 }
 
-.Luke{
-  width: 250px;
-  height: 250px;
-}
+.allcards{ 
+ position: absolute;
+  margin-top: 10em;
+  padding-top: 2em;
+  overflow-y: scroll;
+  border: 50px solid black;
+  height: 60%;
+  width: 100%;
+} 
+
+
+
 
 .charcards{
   transform: translateX(40%) translateY(30%);
-  width: 22rem;
+  width: 25em;
   position: relative;
   background: #2196f3;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left top, #f44336, #2196f3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right bottom, #f44336, #2196f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  float: left;
-  padding: 60px;
- margin: 5rem;
+display: inline-block;
+padding-bottom: none;
+  padding-top: 60px;
+ margin: 10em;
 border-width: 2rem;
 box-shadow: 5rem;
 transition: 1.5s;
 margin-left: 15%;
+animation: float 3s infinite;
 }
 
-.charcards:hover::after{
-    content:"character";
-  
+.data{
+  opacity: 0;
 }
 
+
+.charcards:hover .data{
+
+  transition: 2s;
+  opacity: 1;
+
+}
 
 
 .App-intro {
@@ -117,4 +158,64 @@ margin-left: 15%;
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+
+@keyframes float{
+  0%{
+    transform: translateY(0%)
+  }
+  50%{
+    transform: translateY(-1em);
+  }
+
+  100%{
+    transform: translateY(0%);
+
+  }
+
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.charcards:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+ 
+.flip-container, .front, .back {
+	width: 320px;
+	height: 220px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
