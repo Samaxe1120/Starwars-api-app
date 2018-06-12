@@ -6,6 +6,10 @@
   src: local('Underworld Odd'), url('Underodd.woff') format('woff');
   }
 
+body{
+zoom: 65%;	
+}
+
 .App {
   text-align: center;
 }
